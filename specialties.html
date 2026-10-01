@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialties | Accredited Billing & Consulting</title>
+    <meta name="description" content="We offer efficient medical billing and coding services to healthcare providers across 40+ specialties.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'var(--bg-main)',
+                        surface: 'var(--bg-surface)',
+                        surfaceHighlight: 'var(--bg-highlight)',
+                        primary: 'var(--color-primary)',
+                        primaryDark: 'var(--color-primary-dark)',
+                        secondary: 'var(--color-secondary)',
+                    },
+                    textColor: {
+                        text: 'var(--text-main)',
+                        textMuted: 'var(--text-muted)',
+                    },
+                    borderColor: {
+                        border: 'var(--border-color)',
+                    },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/specialties.css"> 
+</head>
+<body class="font-body selection:bg-primary selection:text-white bg-background text-text">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[99999] bg-white dark:bg-slate-900 flex items-center justify-center transition-opacity duration-500">
+        <div class="flex flex-col items-center gap-4">
+            <span class="text-primary font-heading font-bold text-xl tracking-[0.2em] animate-pulse">ABC BILLING</span>
+            <div class="w-48 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden relative">
+                <div class="absolute top-0 left-0 h-full bg-primary w-0 transition-all duration-1000" id="loader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursors -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-circle hidden md:block"></div>
+
+    <!-- Header Injection Point -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+        
+        <!-- Hero Section -->
+        <header class="relative pt-40 pb-24 overflow-hidden bg-surface border-b border-border">
+            <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center md:text-left flex flex-col items-center md:items-start">
+                <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4 reveal-on-scroll">Specialty-Focused</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight tracking-tight mb-6 text-text reveal-on-scroll max-w-4xl">
+                    Medical Billing Services for <br class="hidden md:block">
+                    <span class="text-gradient-primary">All Types of Specialties</span>
+                </h1>
+                <p class="text-lg text-textMuted max-w-2xl leading-relaxed reveal-on-scroll">
+                    We offer efficient, highly accurate billing and coding services tailored to the unique requirements of healthcare providers across the USA.
+                </p>
+            </div>
+        </header>
+
+        <!-- Specialties Grid Section -->
+        <section class="py-24 bg-background relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-text">Specialty-Focused Billing Services</h2>
+                    <p class="text-textMuted text-lg max-w-2xl mx-auto">We offer expert billing services across 44 specialties to maximize practice revenues.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" id="specialties-grid">
+                    <!-- Complete 40 Specialties Grid -->
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-pink-500"><i class="ph-fill ph-baby text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">OB/GYN</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-purple-500"><i class="ph-fill ph-brain text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Neurology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-orange-500"><i class="ph-fill ph-bone text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Orthopedics</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-blue-400"><i class="ph-fill ph-hands-clapping text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Pediatrics</h4>
+                    </div>
+                    
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-blue-500"><i class="ph-fill ph-sneaker text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Podiatry</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-red-500"><i class="ph-fill ph-heartbeat text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Cardiology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-teal-500"><i class="ph-fill ph-lungs text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Pulmonology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-indigo-400"><i class="ph-fill ph-drop text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Nephrology</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-green-500"><i class="ph-fill ph-users text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Psychiatry</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-red-600"><i class="ph-fill ph-ambulance text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Urgent Care</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-yellow-500"><i class="ph-fill ph-moon text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Sleep Medicine</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-blue-600"><i class="ph-fill ph-first-aid text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Primary Care</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-sky-500"><i class="ph-fill ph-flask text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Urology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-yellow-600"><i class="ph-fill ph-activity text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Endocrinology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-rose-500"><i class="ph-fill ph-hand text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Hand Surgery</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-violet-600"><i class="ph-fill ph-dna text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Rheumatology</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-amber-500"><i class="ph-fill ph-sun-dim text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Dermatology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-fuchsia-500"><i class="ph-fill ph-ear text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Otolaryngology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-emerald-500"><i class="ph-fill ph-eye text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Ophthalmology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-lime-600"><i class="ph-fill ph-virus text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Allergy Immunology</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-pink-600"><i class="ph-fill ph-chats text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Speech Therapy</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-cyan-500"><i class="ph-fill ph-bandaids text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">General Surgery</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-orange-600"><i class="ph-fill ph-person-simple-walk text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Physical Therapy</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-red-500"><i class="ph-fill ph-pulse text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Vascular Surgery</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-blue-500"><i class="ph-fill ph-wheelchair text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Physical Medicine</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-purple-600"><i class="ph-fill ph-pill text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Internal Medicine</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-red-400"><i class="ph-fill ph-shield-plus text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Oncology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-yellow-400"><i class="ph-fill ph-lightning text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Pain Management</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-lime-500"><i class="ph-fill ph-bug text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Infectious Disease</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-indigo-500"><i class="ph-fill ph-head-circuit text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Behavioral Health</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-teal-600"><i class="ph-fill ph-bed text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Ambulatory Surgery</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-emerald-600"><i class="ph-fill ph-test-tube text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Gastro-enterology</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-amber-600"><i class="ph-fill ph-person-arms-spread text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Rehabilitative Medicine</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-purple-700"><i class="ph-fill ph-scissors text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Neurosurgery</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-teal-400"><i class="ph-fill ph-tooth text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Dental</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-red-500"><i class="ph-fill ph-apple-logo text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Medical Nutrition</h4>
+                    </div>
+
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-pink-400"><i class="ph-fill ph-house-line text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Birth Center</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-blue-700"><i class="ph-fill ph-users-three text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Family Practices</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-yellow-500"><i class="ph-fill ph-radioactive text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Radiology</h4>
+                    </div>
+                    <div class="specialty-item group flex items-center gap-4 p-6 bg-surface border border-border rounded-2xl magnet-target">
+                        <div class="specialty-icon-wrapper text-cyan-600"><i class="ph-fill ph-syringe text-xl"></i></div>
+                        <h4 class="font-bold text-sm md:text-base text-text">Anesthesia</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Specialty-Specific Billing Matters Section -->
+        <section class="py-24 bg-surfaceHighlight border-y border-border">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <p class="text-secondary text-sm font-bold uppercase tracking-widest mb-4">Precision Matters</p>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-text">Why General Billing Isn't Enough</h2>
+                    <p class="text-textMuted text-lg max-w-2xl mx-auto">Every specialty has unique modifiers, global periods, and compliance rules. We ensure you never miss a coding update in your specific field.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-surface border border-border rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                            <i class="ph-fill ph-shield-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-text mb-3">Specialty-Specific Scrubbing</h3>
+                        <p class="text-textMuted leading-relaxed">We utilize advanced rules engines tailored to your specialty to catch NCCI edit conflicts before the claim ever leaves our system.</p>
+                    </div>
+                    <div class="p-8 bg-surface border border-border rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                            <i class="ph-fill ph-file-magnifying-glass"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-text mb-3">Complex Modifier Logic</h3>
+                        <p class="text-textMuted leading-relaxed">From modifier 25 in dermatology to complex surgical modifiers in orthopedics, our certified coders know exactly how to maximize compliant reimbursement.</p>
+                    </div>
+                    <div class="p-8 bg-surface border border-border rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                            <i class="ph-fill ph-trend-up"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-text mb-3">Reduced Audit Risk</h3>
+                        <p class="text-textMuted leading-relaxed">By staying hyper-focused on specialty-specific LCD/NCD guidelines, we dramatically lower your risk of post-payment audits and recoupments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Split Content 1: Optimize Collections -->
+        <section class="py-24 bg-surface border-b border-border">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="reveal-on-scroll">
+                        <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">Cost-Effective Solutions</p>
+                        <h2 class="text-3xl md:text-4xl font-heading font-bold leading-tight text-text mb-6">
+                            Optimize Collections with All Types of Medical Billing
+                        </h2>
+                        <div class="space-y-4 text-textMuted leading-relaxed mb-8">
+                            <p>ABC Billing provides efficient medical billing services to enhance the revenue cycle of healthcare practices. We have highly trained and experienced billing and coding staff to help you reduce claim denials and improve financial outcomes.</p>
+                            <p>In addition, we manage medical billing and coding to maximize your reimbursements and avoid potential revenue leakages. Our experienced team handles all the billing operations of specialty practices to prevent claim rejections and improve collections. Further, we submit clean claims, manage denials, consistently follow-up, reduce the days in A/R, and decrease turnaround time.</p>
+                        </div>
+                        <button class="inline-flex px-8 py-4 bg-primary text-white font-bold rounded-full text-sm hover:bg-primaryDark transition-all magnet-target shadow-lg shadow-primary/20">
+                            Request Pricing
+                        </button>
+                    </div>
+                    <div class="relative reveal-on-scroll">
+                        <div class="absolute -inset-4 bg-primary/5 rounded-3xl rotate-2"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Medical billing professional working on dual monitors" class="relative rounded-3xl shadow-2xl w-full h-auto object-cover border border-border">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing CTA Banner -->
+        <section class="py-20 relative overflow-hidden bg-slate-900 text-white">
+            <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[200px] bg-primary/30 blur-[100px] rounded-full pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <p class="text-primary font-bold uppercase tracking-widest text-sm mb-3">Get Free Quote</p>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-8">View ABC Billing Pricing</h2>
+                <button class="inline-flex px-8 py-4 bg-white text-slate-900 font-bold rounded-full text-sm hover:bg-slate-100 transition-all magnet-target shadow-xl">
+                    Request Now
+                </button>
+            </div>
+        </section>
+
+        <!-- Split Content 2: Improve Financial Performance -->
+        <section class="py-24 bg-background border-b border-border">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="relative reveal-on-scroll order-2 md:order-1">
+                        <div class="absolute -inset-4 bg-secondary/5 rounded-3xl -rotate-2"></div>
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Doctor consulting with a patient" class="relative rounded-3xl shadow-2xl w-full h-auto object-cover border border-border">
+                    </div>
+                    <div class="reveal-on-scroll order-1 md:order-2">
+                        <h2 class="text-3xl md:text-4xl font-heading font-bold leading-tight text-text mb-6">
+                            Improve Financial Performance with Medical Billing Services
+                        </h2>
+                        <div class="space-y-4 text-textMuted leading-relaxed mb-8">
+                            <p>Our medical coding services help providers achieve error-free billing at affordable prices. We manage all the complexities of medical billing and coding to improve the bottom line. As a result, it reduces the burden on your in-house team and increases the reimbursement rate.</p>
+                            <p>Also, it allows providers to focus on patient care while reducing the stress of losing revenue. Our medical billing team prevents claim denials with clean claim submissions based on accurate coding techniques. Consult with our team to learn how to optimize the revenue cycle process while staying compliant with the ever-changing healthcare industry.</p>
+                        </div>
+                        <button class="inline-flex px-8 py-4 bg-surface border border-border text-text font-bold rounded-full text-sm hover:border-primary hover:text-primary transition-all magnet-target shadow-lg">
+                            Request Pricing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialty Onboarding Process -->
+        <section class="py-24 bg-surface border-b border-border">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">Seamless Transition</p>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-text">Specialty Onboarding Workflow</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8 relative">
+                    <!-- Connecting line for desktop -->
+                    <div class="hidden md:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-border z-0"></div>
+                    
+                    <div class="relative z-10 text-center reveal-on-scroll">
+                        <div class="w-16 h-16 mx-auto bg-surface border-2 border-primary rounded-full flex items-center justify-center text-primary font-heading font-bold text-xl mb-6 shadow-lg">1</div>
+                        <h4 class="font-bold text-lg text-text mb-2">Specialty Audit</h4>
+                        <p class="text-sm text-textMuted">We review your top 20 most billed CPT codes for compliance and historical denial trends.</p>
+                    </div>
+                    <div class="relative z-10 text-center reveal-on-scroll">
+                        <div class="w-16 h-16 mx-auto bg-surface border-2 border-secondary rounded-full flex items-center justify-center text-secondary font-heading font-bold text-xl mb-6 shadow-lg">2</div>
+                        <h4 class="font-bold text-lg text-text mb-2">EMR Integration</h4>
+                        <p class="text-sm text-textMuted">Secure mapping of your clinical documentation to our specialty-specific billing software.</p>
+                    </div>
+                    <div class="relative z-10 text-center reveal-on-scroll">
+                        <div class="w-16 h-16 mx-auto bg-surface border-2 border-orange-500 rounded-full flex items-center justify-center text-orange-500 font-heading font-bold text-xl mb-6 shadow-lg">3</div>
+                        <h4 class="font-bold text-lg text-text mb-2">Rule Configuration</h4>
+                        <p class="text-sm text-textMuted">Setting up custom scrubbing rules based on your specific payer contracts and specialty.</p>
+                    </div>
+                    <div class="relative z-10 text-center reveal-on-scroll">
+                        <div class="w-16 h-16 mx-auto bg-surface border-2 border-green-500 rounded-full flex items-center justify-center text-green-500 font-heading font-bold text-xl mb-6 shadow-lg">4</div>
+                        <h4 class="font-bold text-lg text-text mb-2">Go Live</h4>
+                        <p class="text-sm text-textMuted">Daily claims submission with dedicated specialty coders reviewing every encounter.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EMR Integration Section -->
+        <section class="py-24 bg-background">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-text">We are fully trained on your existing EMR</h2>
+                    <p class="text-textMuted text-lg max-w-2xl mx-auto">Our medical billing specialists know the workarounds of all the EHRs. We help you submit clean claims no matter which EHR you use.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-12">
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">Epic</span>
+                    </div>
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">AdvancedMD</span>
+                    </div>
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">NextGen</span>
+                    </div>
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">athenahealth</span>
+                    </div>
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">CareCloud</span>
+                    </div>
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">Cerner</span>
+                    </div>
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">eClinicalWorks</span>
+                    </div>
+                    <div class="emr-card magnet-target">
+                        <span class="font-bold text-textMuted text-xl font-heading">Kareo</span>
+                    </div>
+                </div>
+                
+                <div class="text-center reveal-on-scroll">
+                    <button class="inline-flex px-8 py-3 bg-primary text-white font-bold rounded-full text-sm hover:bg-primaryDark transition-all magnet-target shadow-lg shadow-primary/20">
+                        Explore More EHRs
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Banner Footer -->
+        <section class="py-12 bg-surface border-t border-border">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-border">
+                    <div class="flex items-start gap-4 pt-6 md:pt-0 md:px-6 group">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shrink-0"><i class="ph-bold ph-chart-line-up text-2xl"></i></div>
+                        <div>
+                            <p class="text-sm text-textMuted leading-relaxed"><strong class="text-text block mb-1">Maximize Revenue</strong> Maximize your revenue potential with our 24/7 medical billing services.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 pt-6 md:pt-0 md:px-6 group">
+                        <div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform shrink-0"><i class="ph-bold ph-users text-2xl"></i></div>
+                        <div>
+                            <p class="text-sm text-textMuted leading-relaxed"><strong class="text-text block mb-1">Expert Team</strong> Hire a team of experts who are well-versed with your EHR and improve the billing process.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 pt-6 md:pt-0 md:px-6 group">
+                        <div class="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform shrink-0"><i class="ph-bold ph-receipt text-2xl"></i></div>
+                        <div>
+                            <p class="text-sm text-textMuted leading-relaxed"><strong class="text-text block mb-1">Cost Savings</strong> Save thousands with our complimentary Billing Audit to enhance cash flow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Injection Point -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JS Scripts -->
+    <script src="js/global.js"></script>
+    <script src="js/specialties.js"></script>
+</body>
+</html>
